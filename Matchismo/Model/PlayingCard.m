@@ -21,6 +21,7 @@
 - (int)match:(NSArray *)otherCards
 {
     int score = 0;
+    NSString *matchType ;
 //    if ([otherCards count] == 1) {
 //        PlayingCard *otherCard = [otherCards lastObject];
 //        if ([otherCard.suit isEqualToString:self.suit]){
@@ -31,13 +32,31 @@
 //    }
     for (PlayingCard *otherCard in otherCards){
         
-        if ([otherCard.suit isEqualToString:self.suit]){
-            score = 1;
-        } else if (otherCard.rank == self.rank){
-            score = 2;
-        } else {
-            score = 0;
-            break;
+        if (!matchType){
+            if ([otherCard.suit isEqualToString:self.suit]){
+                score += 1;
+                matchType = @"suit";
+            } else if (otherCard.rank == self.rank){
+                score += 2;
+                matchType = @"rank";
+            } else {
+                score = 0;
+                break;
+            }            
+        }else if ([matchType isEqualToString:@"suit"]){
+            if ([otherCard.suit isEqualToString:self.suit]){
+                score += 1;
+            } else {
+                score = 0;
+                break;
+            }
+        }else if ([matchType isEqualToString:@"rank"]){
+            if (otherCard.rank == self.rank){
+                score += 2;
+            } else {
+                score = 0;
+                break;
+            }
         }
     }
     

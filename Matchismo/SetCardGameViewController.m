@@ -7,12 +7,29 @@
 //
 
 #import "SetCardGameViewController.h"
+#import "SetCardMatchingGame.h"
+#import "PlayingSetCard.h"
+#import "PlayingSetCardDeck.h"
 
 @interface SetCardGameViewController ()
-
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setCardButtons;
+@property (weak, nonatomic) IBOutlet UILabel *flips;
+@property (nonatomic) int flippedCount;
+@property (strong, nonatomic) SetCardMatchingGame *game;
 @end
 
 @implementation SetCardGameViewController
+
+- (SetCardMatchingGame *)game
+{
+    if (!_game)
+        _game = [[SetCardMatchingGame alloc]
+                 initWithCardCount:self.setCardButtons.count
+                 usingDeck:[[PlayingSetCardDeck alloc] init]];
+    return _game;
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
