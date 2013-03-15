@@ -10,8 +10,8 @@
 
 @interface PlayingSetCard : PlayingCard
 
-@property (strong, nonatomic) NSString *suit;
-@property (nonatomic) NSUInteger rank;
+//@property (strong, nonatomic) NSString *suit;
+//@property (nonatomic) NSUInteger rank;
 @property (nonatomic) NSString *shading;
 @property (nonatomic) NSString *color;
 

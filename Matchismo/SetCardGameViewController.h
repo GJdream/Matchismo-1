@@ -10,5 +10,10 @@
 #import "CardGameViewController.h"
 
 @interface SetCardGameViewController : CardGameViewController
+@property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *setCardButtons;
+
+- (IBAction)flipCard:(UIButton *)sender;
+
+- (void) setSetCardButtons:(NSArray *)cardButtons;
 
 @end

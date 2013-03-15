@@ -17,6 +17,7 @@
 }
 
 @synthesize suit = _suit;
+@synthesize rank = _rank;
 
 - (int)match:(NSArray *)otherCards
 {
@@ -62,6 +63,7 @@
     
     return score;
 }
+
 + (NSArray *)validSuits
 {
     return @[@"♥", @"♦", @"♠", @"♣"];

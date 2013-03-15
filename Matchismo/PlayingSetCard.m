@@ -7,15 +7,24 @@
 //
 
 #import "PlayingSetCard.h"
+#import "UIKit/UIColor.h"
 
 @implementation PlayingSetCard
 //@property (strong, nonatomic) NSString *suit;
 //@property (nonatomic) NSUInteger rank;
 //@property (nonatomic) NSString *shading;
 //@property (nonatomic) NSString *color;
+@synthesize suit = _suit;
+@synthesize rank = _rank;
+
+- (id)init
+{
+    self = [super init];
+    return self;
+}
 
 + (NSArray *)validSuits{
-    return @[@"♢",@"○", @"☐"];
+    return @[@"◆",@"●", @"■"];
 }
 + (NSUInteger)maxRank{
     return 3;
@@ -24,7 +33,7 @@
     return @[@"solid", @"clear", @"striped"];
 }
 + (NSArray *)validColors;{
-    return @[@"red", @"green", @"blue"];
+    return @[ @"red", @"green", @"blue"];
 }
 
 - (void) setColor:(NSString *) color{
@@ -38,6 +47,20 @@
         _shading = shading;
     }
 }
+
+- (void) setSuit:(NSString *) suit{
+    if ([[PlayingSetCard validSuits] containsObject:suit]){
+        _suit = suit;
+    }
+}
+
+- (void)setRank:(NSUInteger)rank
+{
+    if (rank <= [PlayingSetCard maxRank]) {
+        _rank = rank;
+    }
+}
+
 
 - (int)match:(NSArray *)otherCards
 {
