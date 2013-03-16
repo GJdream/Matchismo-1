@@ -10,9 +10,11 @@
 
 @interface CardGameViewController : UIViewController
 
-- (IBAction)dealButton;
+-(IBAction)dealButton;
 
-- (IBAction)flipCard:(UIButton *)sender;
+-(IBAction)flipCard:(UIButton *)sender;
 
-- (void) setCardButtons:(NSArray *)cardButtons;
+-(void) setCardButtons:(NSArray *)cardButtons;
+
+//-(void) setFlippedCount:(int)flippedCount;
 @end

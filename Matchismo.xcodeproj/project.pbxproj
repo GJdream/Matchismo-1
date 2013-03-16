@@ -17,6 +17,7 @@
 		45F64BD816CC19CF00261FB2 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F64BD716CC19CF00261FB2 /* Card.m */; };
 		45F64BDC16CC1AEC00261FB2 /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F64BDB16CC1AEC00261FB2 /* Deck.m */; };
 		45F64BDF16CC1B3000261FB2 /* PlayingCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F64BDE16CC1B3000261FB2 /* PlayingCard.m */; };
+		45F6C68116F3AE89006DCA7F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45F6C68016F3AE89006DCA7F /* QuartzCore.framework */; };
 		45FF6D8C16C92A75003D7437 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FF6D8B16C92A75003D7437 /* UIKit.framework */; };
 		45FF6D8E16C92A75003D7437 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FF6D8D16C92A75003D7437 /* Foundation.framework */; };
 		45FF6D9016C92A75003D7437 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FF6D8F16C92A75003D7437 /* CoreGraphics.framework */; };
@@ -50,6 +51,7 @@
 		45F64BDD16CC1B3000261FB2 /* PlayingCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCard.h; path = Model/PlayingCard.h; sourceTree = "<group>"; };
 		45F64BDE16CC1B3000261FB2 /* PlayingCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCard.m; path = Model/PlayingCard.m; sourceTree = "<group>"; };
 		45F64BE016CC1E8800261FB2 /* PlayingCardDeck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardDeck.h; path = Model/PlayingCardDeck.h; sourceTree = "<group>"; };
+		45F6C68016F3AE89006DCA7F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		45FF6D8816C92A75003D7437 /* Matchismo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Matchismo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45FF6D8B16C92A75003D7437 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		45FF6D8D16C92A75003D7437 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -73,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45F6C68116F3AE89006DCA7F /* QuartzCore.framework in Frameworks */,
 				45FF6D8C16C92A75003D7437 /* UIKit.framework in Frameworks */,
 				45FF6D8E16C92A75003D7437 /* Foundation.framework in Frameworks */,
 				45FF6D9016C92A75003D7437 /* CoreGraphics.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		45FF6D8A16C92A75003D7437 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45F6C68016F3AE89006DCA7F /* QuartzCore.framework */,
 				45FF6D8B16C92A75003D7437 /* UIKit.framework */,
 				45FF6D8D16C92A75003D7437 /* Foundation.framework */,
 				45FF6D8F16C92A75003D7437 /* CoreGraphics.framework */,

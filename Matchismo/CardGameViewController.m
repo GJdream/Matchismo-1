@@ -54,12 +54,12 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.gameStatusLabel.text = [NSString stringWithFormat:@"%@", self.game.gameStatus];
     self.modeSegm.enabled = !self.game.isGameOn;
+    self.flippedLabel.text = [NSString stringWithFormat:@"Flipped: %d", self.flippedCount];
 }
 
 
 - (void) setFlippedCount:(int)flippedCount{
     _flippedCount = flippedCount;
-    self.flippedLabel.text = [NSString stringWithFormat:@"Flipped: %d", self.flippedCount];
     NSLog(@"flips updated to %d", self.flippedCount);
 }
 

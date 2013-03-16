@@ -10,10 +10,13 @@
 #import "SetCardMatchingGame.h"
 #import "PlayingSetCard.h"
 #import "PlayingSetCardDeck.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SetCardGameViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *flips;
+@property (weak, nonatomic) IBOutlet UILabel *flippedLabel;
+
 @property (nonatomic) int flippedCount;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -23,9 +26,12 @@
 - (CardMatchingGame *)game
 {
     if (!_game)
+        //reusing CardMatchingGame
         _game = [[CardMatchingGame alloc]
                  initWithCardCount:self.setCardButtons.count
                  usingDeck:[[PlayingSetCardDeck alloc] init]];
+    //as set card is 3 card mode, setting this value as 3
+    _game.mode = 3;
     return _game;
 }
 
@@ -36,20 +42,22 @@
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
-    
+    [super flipCard:sender];
+    /**
     [self.game flipCardAtIndex:[self.setCardButtons indexOfObject:sender]];
     
     self.flippedCount++;
+    NSLog(@"flipped: %d", self.flippedCount);
     [self updateUI];
+     **/
 }
-
 
 - (void)updateUI
 {
     NSLog(@"updateUI");
     for (UIButton *cardButton in self.setCardButtons){
         PlayingSetCard *card = (PlayingSetCard *)[self.game cardAtIndex:[self.setCardButtons indexOfObject:cardButton]];
-        NSLog(@"card contains %@", card.contents);
+        //NSLog(@"card contains %@", card.contents);
         NSMutableString *content = [[NSMutableString alloc] init];
         //create string content
         for (int i = 0; i < card.rank; i++){
@@ -89,9 +97,18 @@
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-
+        //setting border if card is faceUp
+        
+        if (card.isFaceUp){
+            [[cardButton layer] setBorderWidth:2.0f];
+            [[cardButton layer] setBorderColor:[UIColor blackColor].CGColor];
+        }
         
     }
+    
+    self.flippedLabel.text = [NSString stringWithFormat:@"Flipped: %d", self.flippedCount];
+    NSLog(@"flips updated to %d", self.flippedCount);
+
 }
 
 - (void)viewDidLoad
@@ -99,7 +116,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
-- (IBAction)dealButton{
+
+- (IBAction)dealButton {
     [super dealButton];
 }
 
