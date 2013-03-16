@@ -98,8 +98,9 @@
         [cardButton setAttributedTitle:cardContent forState:UIControlStateNormal];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
+        //to mark matched cards
         cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
-
+        //to mark selected cards
         cardButton.alpha = (card.isFaceUp && !card.isUnplayable) ? 0.3 : 1.0;
         /**
          //setting border if card is faceUp
