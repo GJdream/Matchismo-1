@@ -483,6 +483,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="t4m-GH-Fm6" eventType="touchUpInside" id="Rxc-zh-Lr9"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ocU-xs-82e">
                                 <rect key="frame" x="83" y="63" width="73" height="44"/>
@@ -495,6 +498,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="flipCard:" destination="t4m-GH-Fm6" eventType="touchUpInside" id="pZm-9H-dR8"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uvs-LT-S6D">
                                 <rect key="frame" x="162" y="63" width="73" height="44"/>
@@ -773,35 +779,35 @@
                     <connections>
                         <outlet property="flippedLabel" destination="LkA-2U-bMJ" id="JZ7-nj-t65"/>
                         <outlet property="flips" destination="LkA-2U-bMJ" id="tRd-rd-j0M"/>
-                        <outletCollection property="setCardButtons" destination="YV1-a6-0IK" id="ovW-A8-SOG"/>
-                        <outletCollection property="setCardButtons" destination="nfa-nl-RUt" id="mdx-f8-tJA"/>
-                        <outletCollection property="setCardButtons" destination="Z25-df-V4U" id="1AE-bL-xpf"/>
-                        <outletCollection property="setCardButtons" destination="89L-f2-0o3" id="3iU-gy-kHd"/>
-                        <outletCollection property="setCardButtons" destination="3Cl-a2-yJ1" id="leD-wy-Wf0"/>
-                        <outletCollection property="setCardButtons" destination="Ht9-dl-LJF" id="nv7-ds-xnU"/>
-                        <outletCollection property="setCardButtons" destination="EfI-Qe-5a6" id="XYX-2m-Drh"/>
-                        <outletCollection property="setCardButtons" destination="68d-SN-P7z" id="cuM-Xc-asW"/>
-                        <outletCollection property="setCardButtons" destination="bcv-a2-pN6" id="LNQ-7Y-9Nd"/>
-                        <outletCollection property="setCardButtons" destination="1Gm-ie-gV6" id="8q5-VQ-jos"/>
-                        <outletCollection property="setCardButtons" destination="vTW-3J-60Q" id="RVx-fF-TbG"/>
-                        <outletCollection property="setCardButtons" destination="9UZ-Kz-eFe" id="Kke-9I-55z"/>
-                        <outletCollection property="setCardButtons" destination="3Cu-Bg-QpA" id="pPE-Yc-aFu"/>
-                        <outletCollection property="setCardButtons" destination="ocU-xs-82e" id="vbE-dP-F6A"/>
-                        <outletCollection property="setCardButtons" destination="uvs-LT-S6D" id="eO5-XT-JmN"/>
-                        <outletCollection property="setCardButtons" destination="MyT-uA-5N5" id="Wzk-no-IaR"/>
-                        <outletCollection property="setCardButtons" destination="6gm-7y-RcL" id="Nu8-NW-8AV"/>
-                        <outletCollection property="setCardButtons" destination="eeX-81-mgl" id="lLb-iZ-Hdm"/>
-                        <outletCollection property="setCardButtons" destination="LYR-qV-pl0" id="XJ7-Um-kGe"/>
-                        <outletCollection property="setCardButtons" destination="FU7-RO-fED" id="6mb-sT-LfN"/>
-                        <outletCollection property="setCardButtons" destination="Fey-Dg-HBg" id="0cO-XI-sfv"/>
-                        <outletCollection property="setCardButtons" destination="Wfl-v1-XeH" id="E5g-3P-Mk9"/>
-                        <outletCollection property="setCardButtons" destination="cN5-xK-phj" id="PIw-AB-SVa"/>
-                        <outletCollection property="setCardButtons" destination="JS7-rT-ozJ" id="6Hl-eO-LfS"/>
+                        <outletCollection property="cardButtons" destination="6gm-7y-RcL" id="RFI-Wv-ODM"/>
+                        <outletCollection property="cardButtons" destination="eeX-81-mgl" id="ttu-x0-s99"/>
+                        <outletCollection property="cardButtons" destination="LYR-qV-pl0" id="uhz-h3-Y7Q"/>
+                        <outletCollection property="cardButtons" destination="FU7-RO-fED" id="e44-LH-5er"/>
+                        <outletCollection property="cardButtons" destination="3Cu-Bg-QpA" id="cul-WP-Ick"/>
+                        <outletCollection property="cardButtons" destination="ocU-xs-82e" id="oRh-Ow-Xiv"/>
+                        <outletCollection property="cardButtons" destination="uvs-LT-S6D" id="r3B-fc-ujH"/>
+                        <outletCollection property="cardButtons" destination="MyT-uA-5N5" id="oPw-aT-36j"/>
+                        <outletCollection property="cardButtons" destination="bcv-a2-pN6" id="ZxQ-Ns-V1j"/>
+                        <outletCollection property="cardButtons" destination="1Gm-ie-gV6" id="L5Z-DD-gDD"/>
+                        <outletCollection property="cardButtons" destination="vTW-3J-60Q" id="BZS-uI-vzO"/>
+                        <outletCollection property="cardButtons" destination="9UZ-Kz-eFe" id="i4f-TO-hDh"/>
+                        <outletCollection property="cardButtons" destination="3Cl-a2-yJ1" id="wF9-hm-iNu"/>
+                        <outletCollection property="cardButtons" destination="Ht9-dl-LJF" id="T04-Lu-88a"/>
+                        <outletCollection property="cardButtons" destination="EfI-Qe-5a6" id="lDy-0d-IiP"/>
+                        <outletCollection property="cardButtons" destination="68d-SN-P7z" id="V4g-M3-icU"/>
+                        <outletCollection property="cardButtons" destination="YV1-a6-0IK" id="DKZ-Hp-ero"/>
+                        <outletCollection property="cardButtons" destination="nfa-nl-RUt" id="ugD-6q-yzb"/>
+                        <outletCollection property="cardButtons" destination="Z25-df-V4U" id="aTw-Go-V3U"/>
+                        <outletCollection property="cardButtons" destination="89L-f2-0o3" id="BB0-Ad-HNU"/>
+                        <outletCollection property="cardButtons" destination="Fey-Dg-HBg" id="eGc-mG-DSb"/>
+                        <outletCollection property="cardButtons" destination="Wfl-v1-XeH" id="jMn-0N-0jH"/>
+                        <outletCollection property="cardButtons" destination="cN5-xK-phj" id="PXu-5Y-XbM"/>
+                        <outletCollection property="cardButtons" destination="JS7-rT-ozJ" id="zWe-kX-wYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vbf-qs-y5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-170" y="177"/>
+            <point key="canvasLocation" x="-148" y="167"/>
         </scene>
     </scenes>
     <resources>
@@ -826,7 +832,7 @@
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="flippedLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flips" candidateClass="UILabel"/>
-                <relationship kind="outletCollection" name="setCardButtons" candidateClass="UIButton"/>
+                <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
     </classes>

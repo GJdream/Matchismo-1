@@ -25,19 +25,21 @@
 
 - (CardMatchingGame *)game
 {
-    if (!_game)
+    if (!_game){
         //reusing CardMatchingGame
         _game = [[CardMatchingGame alloc]
-                 initWithCardCount:self.setCardButtons.count
+                 initWithCardCount:self.cardButtons.count
                  usingDeck:[[PlayingSetCardDeck alloc] init]];
-    //as set card is 3 card mode, setting this value as 3
-    _game.mode = 3;
+        //as set card is 3 card mode, setting this value as 3
+        _game.mode = 3;
+    }
     return _game;
 }
 
-- (void) setSetCardButtons:(NSArray *)cardButtons
+
+- (void) setCardButtons:(NSArray *)cardButtons
 {
-    _setCardButtons = cardButtons;
+    _cardButtons = cardButtons;
     [self updateUI];
 }
 
@@ -55,8 +57,8 @@
 - (void)updateUI
 {
     NSLog(@"updateUI");
-    for (UIButton *cardButton in self.setCardButtons){
-        PlayingSetCard *card = (PlayingSetCard *)[self.game cardAtIndex:[self.setCardButtons indexOfObject:cardButton]];
+    for (UIButton *cardButton in self.cardButtons){
+        PlayingSetCard *card = (PlayingSetCard *)[self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         //NSLog(@"card contains %@", card.contents);
         NSMutableString *content = [[NSMutableString alloc] init];
         //create string content
@@ -96,13 +98,19 @@
         [cardButton setAttributedTitle:cardContent forState:UIControlStateNormal];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
-        cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-        //setting border if card is faceUp
-        
+        cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
+
+        cardButton.alpha = (card.isFaceUp && !card.isUnplayable) ? 0.3 : 1.0;
+        /**
+         //setting border if card is faceUp
         if (card.isFaceUp){
+            
             [[cardButton layer] setBorderWidth:2.0f];
             [[cardButton layer] setBorderColor:[UIColor blackColor].CGColor];
-        }
+            NSLog(@"card face up:%@", card.contents);
+        }else{
+            [[cardButton layer] setBorderWidth:0.0f] ;
+        }**/
         
     }
     
