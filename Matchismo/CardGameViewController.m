@@ -12,12 +12,12 @@
 
 @interface CardGameViewController ()
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (weak, nonatomic) IBOutlet UILabel *flippedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *flipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegm;
 
-@property (nonatomic) int flippedCount;
+@property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
 
 @end
@@ -54,27 +54,28 @@
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     self.gameStatusLabel.text = [NSString stringWithFormat:@"%@", self.game.gameStatus];
     self.modeSegm.enabled = !self.game.isGameOn;
-    self.flippedLabel.text = [NSString stringWithFormat:@"Flipped: %d", self.flippedCount];
 }
 
 
-- (void) setFlippedCount:(int)flippedCount{
-    _flippedCount = flippedCount;
-    NSLog(@"flips updated to %d", self.flippedCount);
+- (void) setFlipCount:(int)flipCount{
+    _flipCount = flipCount;
+    NSLog(@"flips updated to %d", self.flipCount);
+    self.flipLabel.text = [NSString stringWithFormat:@"Flip: %d", self.flipCount];
+
 }
 
 - (IBAction)flipCard:(UIButton *)sender {
     
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     
-    self.flippedCount++;
+    self.flipCount++;
     [self updateUI];
 }
 
 - (IBAction)dealButton {
     
     self.game = nil;
-    self.flippedCount = 0;
+    self.flipCount = 0;
     
     [self updateUI];
 }

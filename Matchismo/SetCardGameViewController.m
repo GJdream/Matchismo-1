@@ -13,10 +13,10 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface SetCardGameViewController ()
-
+/**
 @property (weak, nonatomic) IBOutlet UILabel *flips;
 @property (weak, nonatomic) IBOutlet UILabel *flippedLabel;
-
+**/
 @property (nonatomic) int flippedCount;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
@@ -98,11 +98,16 @@
         [cardButton setAttributedTitle:cardContent forState:UIControlStateNormal];
         cardButton.selected = card.isFaceUp;
         cardButton.enabled = !card.isUnplayable;
-        //to mark matched cards
-        cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
+
         //to mark selected cards
-        cardButton.alpha = (card.isFaceUp && !card.isUnplayable) ? 0.3 : 1.0;
-        /**
+        cardButton.alpha = card.isFaceUp ? 0.3 : 1.0;
+
+        //to mark matched cards
+        cardButton.alpha = card.isUnplayable ? 0.0 : cardButton.alpha;
+
+        //NSLog(@"card content:%@ unplayable:%c isFaceUp:%c",card.contents,
+        //      card.isUnplayable, card.isFaceUp);
+        /** this makes sharp rectangular shape.. not pretty.. turn off for now
          //setting border if card is faceUp
         if (card.isFaceUp){
             
@@ -115,7 +120,6 @@
         
     }
     
-    self.flippedLabel.text = [NSString stringWithFormat:@"Flipped: %d", self.flippedCount];
     NSLog(@"flips updated to %d", self.flippedCount);
 
 }
@@ -125,11 +129,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
-
+/**
 - (IBAction)dealButton {
     [super dealButton];
 }
-
+**/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

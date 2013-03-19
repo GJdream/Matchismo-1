@@ -336,7 +336,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Card" image="card_club.png" id="cWX-am-oVa"/>
                     <connections>
-                        <outlet property="flippedLabel" destination="qIu-yy-SOW" id="euq-mZ-EJV"/>
+                        <outlet property="flipLabel" destination="qIu-yy-SOW" id="AGc-ip-eaD"/>
                         <outlet property="gameStatusLabel" destination="g7S-IM-D59" id="Gyb-4o-QfU"/>
                         <outlet property="modeSegm" destination="K6n-xV-pQA" id="fbm-cF-Cb6"/>
                         <outlet property="scoreLabel" destination="drn-09-7kQ" id="zeY-1s-0tG"/>
@@ -398,7 +398,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="XYb-70-SyD">
-                                <rect key="frame" x="124" y="346" width="72" height="44"/>
+                                <rect key="frame" x="124" y="348" width="72" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Deal">
@@ -409,7 +409,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dealButton" destination="t4m-GH-Fm6" eventType="touchUpInside" id="alR-nB-XHf"/>
+                                    <action selector="dealButton" destination="t4m-GH-Fm6" eventType="touchUpInside" id="VBK-FA-M3A"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6gm-7y-RcL">
@@ -772,13 +772,20 @@
                                     <action selector="flipCard:" destination="t4m-GH-Fm6" eventType="touchUpInside" id="Hb9-hU-1wh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Let's game!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="puL-Ho-TCP">
+                                <rect key="frame" x="111" y="310" width="94" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set" id="fsp-6X-rIR"/>
                     <connections>
-                        <outlet property="flippedLabel" destination="LkA-2U-bMJ" id="JZ7-nj-t65"/>
-                        <outlet property="flips" destination="LkA-2U-bMJ" id="tRd-rd-j0M"/>
+                        <outlet property="flipLabel" destination="LkA-2U-bMJ" id="At5-YZ-tza"/>
+                        <outlet property="gameStatusLabel" destination="puL-Ho-TCP" id="41A-dV-gGL"/>
                         <outletCollection property="cardButtons" destination="6gm-7y-RcL" id="RFI-Wv-ODM"/>
                         <outletCollection property="cardButtons" destination="eeX-81-mgl" id="ttu-x0-s99"/>
                         <outletCollection property="cardButtons" destination="LYR-qV-pl0" id="uhz-h3-Y7Q"/>
@@ -819,7 +826,7 @@
             <relationships>
                 <relationship kind="action" name="dealButton"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="flippedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="flipLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="gameStatusLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="modeSegm" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
@@ -830,8 +837,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SetCardGameViewController.h"/>
             <relationships>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="flippedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="flips" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
         </class>
