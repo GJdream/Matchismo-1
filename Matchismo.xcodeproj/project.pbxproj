@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		451F76F816D2C79D000FF5EB /* CardMatchingGame.m in Sources */ = {isa = PBXBuildFile; fileRef = 451F76F716D2C79D000FF5EB /* CardMatchingGame.m */; };
+		45704F9B16F8E33300AEB401 /* card_diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 45704F9A16F8E33300AEB401 /* card_diamond.png */; };
 		457B98A716E63FA700AEA77B /* SetCardGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 457B98A616E63FA700AEA77B /* SetCardGameViewController.m */; };
 		457B98A916E6457A00AEA77B /* card_club.png in Resources */ = {isa = PBXBuildFile; fileRef = 457B98A816E6457A00AEA77B /* card_club.png */; };
 		45EDBAC116EB001E00310A27 /* PlayingSetCardDeck.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EDBAC016EB001E00310A27 /* PlayingSetCardDeck.m */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		451F76F616D2C79D000FF5EB /* CardMatchingGame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardMatchingGame.h; path = Model/CardMatchingGame.h; sourceTree = "<group>"; };
 		451F76F716D2C79D000FF5EB /* CardMatchingGame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CardMatchingGame.m; path = Model/CardMatchingGame.m; sourceTree = "<group>"; };
+		45704F9A16F8E33300AEB401 /* card_diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card_diamond.png; path = ../../../Downloads/056/card_diamond.png; sourceTree = "<group>"; };
 		457B98A516E63FA700AEA77B /* SetCardGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCardGameViewController.h; sourceTree = "<group>"; };
 		457B98A616E63FA700AEA77B /* SetCardGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCardGameViewController.m; sourceTree = "<group>"; };
 		457B98A816E6457A00AEA77B /* card_club.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_club.png; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		45FF6D9216C92A75003D7437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				45704F9A16F8E33300AEB401 /* card_diamond.png */,
 				457B98A816E6457A00AEA77B /* card_club.png */,
 				45FF6D9316C92A75003D7437 /* Matchismo-Info.plist */,
 				45FF6D9416C92A75003D7437 /* InfoPlist.strings */,
@@ -225,6 +228,7 @@
 				45FF6DA216C92A75003D7437 /* Default-568h@2x.png in Resources */,
 				45FF6DA516C92A76003D7437 /* MainStoryboard.storyboard in Resources */,
 				457B98A916E6457A00AEA77B /* card_club.png in Resources */,
+				45704F9B16F8E33300AEB401 /* card_diamond.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

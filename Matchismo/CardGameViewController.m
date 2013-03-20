@@ -52,7 +52,6 @@
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
-    self.gameStatusLabel.text = [NSString stringWithFormat:@"%@", self.game.gameStatus];
     self.modeSegm.enabled = !self.game.isGameOn;
 }
 
@@ -64,11 +63,22 @@
 
 }
 
+- (void) setGameStatusLabelText{
+    self.gameStatusLabel.text = [NSString stringWithFormat:@"%@", self.game.gameStatus];
+}
+
+- (void) setScoreLabelText{
+    self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+}
+
+
 - (IBAction)flipCard:(UIButton *)sender {
     
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     
     self.flipCount++;
+    [self setGameStatusLabelText];
+    [self setScoreLabelText];
     [self updateUI];
 }
 

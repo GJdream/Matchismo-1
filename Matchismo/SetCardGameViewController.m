@@ -13,11 +13,6 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface SetCardGameViewController ()
-/**
-@property (weak, nonatomic) IBOutlet UILabel *flips;
-@property (weak, nonatomic) IBOutlet UILabel *flippedLabel;
-**/
-@property (nonatomic) int flippedCount;
 @property (strong, nonatomic) CardMatchingGame *game;
 @end
 
@@ -43,20 +38,10 @@
     [self updateUI];
 }
 
-- (IBAction)flipCard:(UIButton *)sender {
-    [super flipCard:sender];
-    /**
-    [self.game flipCardAtIndex:[self.setCardButtons indexOfObject:sender]];
-    
-    self.flippedCount++;
-    NSLog(@"flipped: %d", self.flippedCount);
-    [self updateUI];
-     **/
-}
 
 - (void)updateUI
 {
-    NSLog(@"updateUI");
+    //NSLog(@"updateUI");
     for (UIButton *cardButton in self.cardButtons){
         PlayingSetCard *card = (PlayingSetCard *)[self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
         //NSLog(@"card contains %@", card.contents);
@@ -120,7 +105,7 @@
         
     }
     
-    NSLog(@"flips updated to %d", self.flippedCount);
+//    NSLog(@"flips updated to %d", self.flipCount);
 
 }
 
@@ -129,11 +114,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
-/**
-- (IBAction)dealButton {
-    [super dealButton];
-}
-**/
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
