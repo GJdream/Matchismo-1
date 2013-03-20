@@ -10,7 +10,7 @@
 #import "SetCardMatchingGame.h"
 #import "PlayingSetCard.h"
 #import "PlayingSetCardDeck.h"
-#import <QuartzCore/QuartzCore.h>
+//#import <QuartzCore/QuartzCore.h>
 
 @interface SetCardGameViewController ()
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -55,21 +55,21 @@
         
         //color
         UIColor *targetColor = [[UIColor alloc] init];
-        if ([card.color isEqualToString: @"red"]) {
+        if ([card.color isEqualToString: PlayingSetCard.COLOR_RED]) {
             targetColor = [UIColor redColor];
-        }else if ([card.color isEqualToString: @"green"]) {
+        }else if ([card.color isEqualToString: PlayingSetCard.COLOR_GREEN]) {
             targetColor = [UIColor greenColor];
-        }else if ([card.color isEqualToString: @"blue"]){
+        }else if ([card.color isEqualToString: PlayingSetCard.COLOR_BLUE]){
             targetColor = [UIColor blueColor];
         }
         [cardAttr setObject:targetColor forKey:NSForegroundColorAttributeName];
         
         //shade
-        if ([card.shading isEqualToString: @"solid"]){
+        if ([card.shading isEqualToString: PlayingSetCard.SHADE_SOLID]){
             //do nothihg
-        }else if ([card.shading isEqualToString: @"clear"]){
+        }else if ([card.shading isEqualToString: PlayingSetCard.SHADE_CLEAR]){
             [cardAttr setObject:[NSNumber numberWithFloat:3.0] forKey:NSStrokeWidthAttributeName];
-        }else if ([card.shading isEqualToString: @"striped"]){
+        }else if ([card.shading isEqualToString: PlayingSetCard.SHADE_STRIPED]){
             [cardAttr setObject:@-5 forKey:
              NSStrokeWidthAttributeName];
             [cardAttr setObject:targetColor forKey:
@@ -85,23 +85,10 @@
         cardButton.enabled = !card.isUnplayable;
 
         //to mark selected cards
-        cardButton.alpha = card.isFaceUp ? 0.3 : 1.0;
+        cardButton.backgroundColor = card.isFaceUp ? [UIColor grayColor] : [UIColor whiteColor] ;
 
         //to mark matched cards
         cardButton.alpha = card.isUnplayable ? 0.0 : cardButton.alpha;
-
-        //NSLog(@"card content:%@ unplayable:%c isFaceUp:%c",card.contents,
-        //      card.isUnplayable, card.isFaceUp);
-        /** this makes sharp rectangular shape.. not pretty.. turn off for now
-         //setting border if card is faceUp
-        if (card.isFaceUp){
-            
-            [[cardButton layer] setBorderWidth:2.0f];
-            [[cardButton layer] setBorderColor:[UIColor blackColor].CGColor];
-            NSLog(@"card face up:%@", card.contents);
-        }else{
-            [[cardButton layer] setBorderWidth:0.0f] ;
-        }**/
         
     }
     

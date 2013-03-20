@@ -81,7 +81,7 @@
            }else{
                 self.score -= MISMATCH_PENALITY;
                 self.gameStatus = [NSString stringWithFormat:@"%@",card.contents];
-                
+               
                 for(Card *otherCard in selectedCards) {
                     if (otherCard.isFaceUp && !otherCard.isUnplayable) {
                         otherCard.faceUp = NO;
