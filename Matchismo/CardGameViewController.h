@@ -10,7 +10,7 @@
 
 @interface CardGameViewController : UIViewController
 
--(IBAction)dealButton;
+//-(IBAction)dealButton;
 
 -(IBAction)flipCard:(UIButton *)sender;
 

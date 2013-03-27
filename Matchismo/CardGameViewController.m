@@ -15,7 +15,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSegm;
 
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
@@ -52,7 +51,6 @@
         cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
     }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
-    self.modeSegm.enabled = !self.game.isGameOn;
 }
 
 
@@ -86,24 +84,10 @@
     
     self.game = nil;
     self.flipCount = 0;
-    
+    [self setGameStatusLabelText];
+    [self setScoreLabelText];
     [self updateUI];
 }
-
-
-- (IBAction)selectModeSegm {
-    
-    if (self.modeSegm.selectedSegmentIndex == 0){
-        self.game.mode = 2;
-        NSLog(@" 2 card mode");
-    }else if (self.modeSegm.selectedSegmentIndex == 1){
-        self.game.mode = 3;
-        NSLog(@" 3 card mode");
-    }
-}
-
-
-
 
 
 @end

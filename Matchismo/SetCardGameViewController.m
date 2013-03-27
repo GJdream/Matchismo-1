@@ -7,9 +7,9 @@
 //
 
 #import "SetCardGameViewController.h"
-#import "SetCardMatchingGame.h"
 #import "PlayingSetCard.h"
 #import "PlayingSetCardDeck.h"
+#import "CardMatchingGame.h"
 //#import <QuartzCore/QuartzCore.h>
 
 @interface SetCardGameViewController ()
@@ -55,21 +55,21 @@
         
         //color
         UIColor *targetColor = [[UIColor alloc] init];
-        if ([card.color isEqualToString: PlayingSetCard.COLOR_RED]) {
+        if ([card.color isEqualToString: COLOR_RED]) {
             targetColor = [UIColor redColor];
-        }else if ([card.color isEqualToString: PlayingSetCard.COLOR_GREEN]) {
+        }else if ([card.color isEqualToString: COLOR_GREEN]) {
             targetColor = [UIColor greenColor];
-        }else if ([card.color isEqualToString: PlayingSetCard.COLOR_BLUE]){
+        }else if ([card.color isEqualToString: COLOR_BLUE]){
             targetColor = [UIColor blueColor];
         }
         [cardAttr setObject:targetColor forKey:NSForegroundColorAttributeName];
         
         //shade
-        if ([card.shading isEqualToString: PlayingSetCard.SHADE_SOLID]){
+        if ([card.shading isEqualToString: SHADE_SOLID]){
             //do nothihg
-        }else if ([card.shading isEqualToString: PlayingSetCard.SHADE_CLEAR]){
+        }else if ([card.shading isEqualToString: SHADE_CLEAR]){
             [cardAttr setObject:[NSNumber numberWithFloat:3.0] forKey:NSStrokeWidthAttributeName];
-        }else if ([card.shading isEqualToString: PlayingSetCard.SHADE_STRIPED]){
+        }else if ([card.shading isEqualToString: SHADE_STRIPED]){
             [cardAttr setObject:@-5 forKey:
              NSStrokeWidthAttributeName];
             [cardAttr setObject:targetColor forKey:
@@ -96,16 +96,6 @@
 
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
