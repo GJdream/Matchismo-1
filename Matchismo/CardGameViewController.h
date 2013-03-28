@@ -10,6 +10,9 @@
 
 @interface CardGameViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *gameStatusLabel;
+
+
 //-(IBAction)dealButton;
 
 -(IBAction)flipCard:(UIButton *)sender;

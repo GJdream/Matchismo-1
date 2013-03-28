@@ -43,10 +43,13 @@
     NSLog(@"mode:%d", self.mode);
 
     if(!card.isFaceUp) {
+        //first set changed
+        card.changed = YES;
         
         for(Card *otherCard in self.cards){
             if (otherCard.isFaceUp && !otherCard.isUnplayable) {
                 [selectedCards addObject:otherCard];
+                otherCard.changed = YES;
                 /**
                 if ([selectedCards count]>=self.mode-1){
                     matchScore = [card match:@[otherCard]];
@@ -61,26 +64,32 @@
         
            // there were more than one card opened and they matched
            if ( matchScore){
+            BOOL isUnPlayable = NO;
+               
                // if it reached max open count
               if ([selectedCards count] >= self.mode-1){
                  card.unplayable = YES;
                  self.score += matchScore * MATCH_BONUS;
-                 self.gameStatus = [NSString stringWithFormat:@"Matching %@",card.contents];
-                
-                 for(Card *otherCard in selectedCards) {
-                     if (otherCard.isFaceUp && !otherCard.isUnplayable) {
-                        otherCard.unplayable = YES;
-                        self.gameStatus = [self.gameStatus stringByAppendingString:otherCard.contents];
-                     }
-                 }
-                 self.gameStatus = [NSString stringWithFormat:@" %@ for %d points", self.gameStatus, (matchScore*MATCH_BONUS-FLIP_COST)];
-              }else{
+                 self.gameStatus = [NSString stringWithFormat:@"Yes! %@",card.contents];
+                 isUnPlayable = YES;
+                 
+              }else{ // still more to go
                   self.score += matchScore;
+                  self.gameStatus = [NSString stringWithFormat:@"Up! %@", card.contents];
+                  isUnPlayable = NO;
               }
-               
+            
+             for(Card *otherCard in selectedCards) {
+                if (otherCard.isFaceUp && !otherCard.isUnplayable) {
+                    otherCard.unplayable = isUnPlayable;
+                    self.gameStatus = [self.gameStatus stringByAppendingFormat:@" %@",otherCard.contents];
+                }
+             }
+            self.gameStatus = [NSString stringWithFormat:@" %@ for %d points", self.gameStatus, (self.score-FLIP_COST)];
+            
            }else{
                 self.score -= MISMATCH_PENALITY;
-                self.gameStatus = [NSString stringWithFormat:@"%@",card.contents];
+                self.gameStatus = [NSString stringWithFormat:@"No! %@",card.contents];
                
                 for(Card *otherCard in selectedCards) {
                     if (otherCard.isFaceUp && !otherCard.isUnplayable) {
@@ -88,10 +97,10 @@
                         self.gameStatus = [self.gameStatus stringByAppendingString:otherCard.contents];
                     }
                 }
-                self.gameStatus = [NSString stringWithFormat:@"%@ don't match! %d points penalty", self.gameStatus, (MISMATCH_PENALITY+FLIP_COST)];
+                self.gameStatus = [NSString stringWithFormat:@"%@ %d points off", self.gameStatus, (MISMATCH_PENALITY+FLIP_COST)];
             }
         }else{//if there is no other card flipped
-            self.gameStatus = [NSString stringWithFormat:@"Flipped up %@", card.contents];
+            self.gameStatus = [NSString stringWithFormat:@"Up! %@", card.contents];
         }
 
      self.score -= FLIP_COST;
@@ -121,6 +130,7 @@
     if (self) {
         for (int i = 0; i< count;i++){
             Card *card = [deck drawRandomCard];
+            card.changed = YES;
             
             if (card) {
                 self.cards[i] = card;

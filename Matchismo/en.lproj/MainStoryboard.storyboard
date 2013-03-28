@@ -313,7 +313,7 @@
                                     <action selector="flipCard:" destination="2" eventType="touchUpInside" id="9y8-2I-suT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Let's begin!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7S-IM-D59">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Let's begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g7S-IM-D59">
                                 <rect key="frame" x="23" y="350" width="279" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -767,12 +767,20 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Let's Begin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7Rt-ti-Vcc">
+                                <rect key="frame" x="20" y="319" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Set" image="card_diamond.png" id="fsp-6X-rIR"/>
                     <connections>
                         <outlet property="flipLabel" destination="LkA-2U-bMJ" id="At5-YZ-tza"/>
+                        <outlet property="gameStatusLabel" destination="7Rt-ti-Vcc" id="vCj-sZ-sjD"/>
                         <outlet property="scoreLabel" destination="0Eh-LQ-BcZ" id="Psj-ql-hFI"/>
                         <outletCollection property="cardButtons" destination="6gm-7y-RcL" id="RFI-Wv-ODM"/>
                         <outletCollection property="cardButtons" destination="eeX-81-mgl" id="ttu-x0-s99"/>

@@ -10,10 +10,6 @@
 #import "UIKit/UIColor.h"
 
 @implementation PlayingSetCard
-//@property (strong, nonatomic) NSString *suit;
-//@property (nonatomic) NSUInteger rank;
-//@property (nonatomic) NSString *shading;
-//@property (nonatomic) NSString *color;
 @synthesize suit = _suit;
 @synthesize rank = _rank;
 
@@ -74,11 +70,11 @@
         val = [[propDC valueForKey:key] intValue];
         NSLog(@"value:%d for key %@",val, key);
         if (val == 2){
-            //non matching set disqualified.. move to next property
+            //non matching set. disqualified.. move to next property
             break;
         }
     }
-    // if it is not 2 then it qualifies
+    // if no 2 then it qualifies
     // as at this point, we are going to see 1 or 2
     if (val != 2){
         score = 3;
