@@ -104,7 +104,7 @@
         cardButton.backgroundColor = card.isFaceUp ? [UIColor grayColor] : [UIColor whiteColor] ;
 
         //to mark matched cards
-        cardButton.alpha = card.isUnplayable ? 0.0 : cardButton.alpha;
+        cardButton.alpha = card.isUnplayable ? 0.0 : 1.0;
         
         //let's add this attribute to status and space
         if (gameStatusAttrStr){ //when gameStatusAttrStr is not nill
